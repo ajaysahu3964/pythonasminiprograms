@@ -1,0 +1,12 @@
+import socket
+s=socket.socket()
+s.connect(("localhost",8989))
+print("_----------------------------------_")
+print("client side program coonected to sever side program")
+print("_----------------------------------_")
+cdata=input("Enter a mssg:")
+s.send(cdata.encode())
+print("_----------------------------------_")
+sdata=s.recv(1024).decode()
+print("Data server at client side={}".format(sdata))
+print("_----------------------------------_")
